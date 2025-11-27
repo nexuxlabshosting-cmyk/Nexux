@@ -1,0 +1,179 @@
+"use client";
+import { useTranslations } from "next-intl";
+import ResuableButton from "../shared/layout/Button";
+import Container from "../shared/layout/Container";
+import {
+  Check,
+  CloudIcon,
+  Database,
+  FigmaIcon,
+  LockKeyholeIcon,
+  SmartphoneIcon,
+  Tv2Icon,
+} from "lucide-react";
+const Capabilities = () => {
+  const t = useTranslations("services");
+  const data = [
+    {
+      img: "tv",
+      title: "Web Design & Development",
+      id: "web-development",
+      des: "Crafting stunning, high-performance websites that captive audiences and drive conversions. We blend creative design with cutting edge technology.",
+      list: [
+        "Responsive Design",
+        "Performance Optimized",
+        "SEO Ready",
+        "CMS Integration",
+      ],
+      bg: "border border-[#FCE6E8] bg-[linear-gradient(304deg,#F4D0CA_-18.02%,#FBF0E9_99.28%)]",
+    },
+    {
+      img: "cloud",
+      title: "Cloud & Data Solutions",
+      id: "cloud-solutions",
+      des: "Scalable cloud infrastructure and data analytics platforms that power your business intelligence and growth.",
+      list: [
+        "Cloud Architecture",
+        "Data Management",
+        "Analytics & BI",
+        "Security & Compilance",
+      ],
+      bg: "border border-[#FCE6E8] bg-[linear-gradient(323deg,#F4D0CA_-33.01%,#FBF0E9_56.15%)]",
+    },
+    {
+      img: "figma",
+      title: "Product Design & UX",
+      id: "product-design",
+      des: "We design human-centered experiences that look good and work even better.",
+      list: [
+        "Research-based UX strategy",
+        "Interactive prototypes",
+        "Scalable design systems",
+        "Pixel-perfect UI for every platform",
+      ],
+      bg: "border border-[#FCE6E8] bg-[linear-gradient(126deg,#F4D0CA_0.77%,#FBF0E9_80.6%)]",
+    },
+    {
+      img: "database",
+      title: "Database Management",
+      id: "database-management",
+      des: "Delivering robust database solutions for data integrity, performance, and secure business scalability across all platforms.",
+      list: [
+        "Database design and optimization",
+        "SQL and NoSQL solutions",
+        "Data migration services ",
+        "Performance tuning",
+      ],
+      bg: "border border-[#FCE6E8] bg-[linear-gradient(126deg,#F4D0CA_0.77%,#FBF0E9_80.6%)]",
+    },
+    {
+      img: "mobile",
+      title: "Mobile App Development",
+      id: "mobile-app-development",
+      des: "Designing native and cross-platform mobile applications that users love — combining performance, usability, and style.",
+      list: [
+        "iOS and Android development",
+        "React Native applications",
+        "App store optimization",
+        "Mobile-first design",
+      ],
+      bg: "border border-[#FCE6E8] bg-[linear-gradient(304deg,#F4D0CA_-18.02%,#FBF0E9_99.28%)]",
+    },
+    {
+      img: "security",
+      title: "Security & Compliance",
+      id: "security-and-compliance",
+      des: "Protecting your digital assets with industry-leading security practices, compliance expertise, and proactive risk management.",
+      list: [
+        "Security audits and assessments",
+        "GDPR and compliance consulting",
+        "Penetration testing",
+        "Security training",
+      ],
+      bg: "border border-[#FCE6E8] bg-[linear-gradient(323deg,#F4D0CA_-33.01%,#FBF0E9_56.15%)]",
+    },
+  ];
+  return (
+    <>
+      <section
+        id="services"
+        className="bg-[linear-gradient(179deg,rgba(252,230,232,0.20)_-222.79%,rgba(255,246,247,0.20)_202.03%)] w-full h-full py-[60px]"
+      >
+        <Container>
+          <div className="space-y-4 md:space-y-10 ">
+            <section className="text-center space-y-2">
+              <ResuableButton>
+                <span className="text-[#E50914]">
+                  {t("capabilities.title")}
+                </span>
+              </ResuableButton>
+              <h2 className="font-semibold text-2xl md:text-3xl leading-8 md:leading-10 ">
+                {t("capabilities.heading")}{" "}
+                <span className="text-[#E50914]">
+                  {t("capabilities.colorheading")}
+                </span>
+              </h2>
+              <p className="font-normal leading-6 text-[15px] md:text-base">
+                {t("capabilities.description")}
+              </p>
+            </section>
+            <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
+              {data.map((item, index) => (
+                <div
+                  id={item.id}
+                  key={index}
+                  className={`${item.bg} rounded-2xl p-6 md:p-8 flex flex-col justify-between space-y-2`}
+                >
+                  <div className="space-y-2">
+                    <div className="p-2.5 bg-[#E50914] w-fit rounded-full text-white">
+                      {renderIcons(item.img)}
+                    </div>
+                    <p className="text-[#1E293B] font-semibold text-lg leading-6">
+                      {item.title}
+                    </p>
+                    <p className="text-[#595959] font-normal leading-6">
+                      {item.des}
+                    </p>
+                  </div>
+                  <ul>
+                    {item.list &&
+                      item.list.map((list_item, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-center gap-2 text-[#595959] text-sm leading-5"
+                        >
+                          <Check size={24} className="text-[#E50914]" />
+                          <span>{list_item}</span>
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+              ))}
+            </section>
+          </div>
+        </Container>
+      </section>
+    </>
+  );
+};
+
+export default Capabilities;
+
+function renderIcons(icon: string) {
+  switch (icon) {
+    case "tv":
+      return <Tv2Icon size={24} />;
+    case "cloud":
+      return <CloudIcon size={24} />;
+    case "figma":
+      return <FigmaIcon size={24} />;
+    case "database":
+      return <Database size={24} />;
+    case "mobile":
+      return <SmartphoneIcon size={24} />;
+    case "security":
+      return <LockKeyholeIcon size={24} />;
+    default:
+      return null;
+  }
+}

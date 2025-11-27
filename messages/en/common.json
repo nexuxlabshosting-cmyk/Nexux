@@ -1,0 +1,23 @@
+{
+  "header": ["Home", "Services", "About", "Team", "Careers", "Blogs"],
+  "contact": "Contact Us",
+  "Footer": {
+    "first": "Ready to Elevate Your Brand?",
+    "second": "Let’s collaborate to create something extraordinary. Get in touch with your team",
+    "button": "Start a conversation",
+    "text": "Building the future, one innovation at a time.",
+    "Company": "Company",
+    "company": ["About Us", "Team", "Careers", "Contact Us"],
+    "Services": "Services",
+    "services": [
+      "Web Development",
+      "Product Design",
+      "Cloud Solutions",
+      "Blogs"
+    ],
+    "connect": "Connect",
+    "rights": " All rights reserved."
+  },
+  "ctaText_1": "Get Started For Free ",
+  "ctaText_2": "Explore Our Services"
+}
