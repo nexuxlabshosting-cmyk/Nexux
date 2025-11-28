@@ -1,11 +1,20 @@
 import { useTranslations } from "next-intl";
 import Container from "../shared/layout/Container";
 import ArticleCard from "./ArticleCard";
-import articleInsights from "@/messages/en/blogs.json";
+interface ArticleItem {
+  img: string;
+  date: string;
+  title: string;
+  description: string;
+  link: string;
+}
 
-const BlogInsight = () => {
+interface InsightArticleProps {
+  articles: ArticleItem[];
+}
+const BlogInsight = ({articles}:InsightArticleProps) => {
   const t = useTranslations("blogs.blogInsights");
-  const articles = articleInsights.blogInsights.articles;
+  if (!articles || articles.length === 0) return null;
   return (
     <section className="bg-white pb-15">
       <Container>
@@ -20,9 +29,9 @@ const BlogInsight = () => {
               <ArticleCard
                 key={index}
                 img={article.img}
-                date={t(`articles.${index}.date`)}
-                title={t(`articles.${index}.title`)}
-                description={t(`articles.${index}.description`)}
+                date={article.date}
+                title={article.title}
+                description={article.description}
                 link={article.link}
               />
             ))}

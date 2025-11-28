@@ -8,19 +8,7 @@
     "title": {
       "text1": "Featured",
       "color1": "Article"
-    },
-
-    "article": {
-      "img": "/images/landingpage/scalable.svg",
-      "date": "October 31, 2025",
-      "title": "MyCase, Buliding a High Level Design System",
-      "description": {
-        "d1": "MyCase's high-level design system established a unified visual language, consistent UX, and scalable framework supporting designers and developers beyond one-off designs.",
-        "d2": "Core foundations like colors, typography, spacing, and grids were defined, then reusable UI components were built consistently, ensuring flexibility, accessibility, and clarity across the platform."
-      },
-      "link": ""
-    },
-    "cta": "Read More"
+    }
   },
   "blogInsights": {
     "title": {
@@ -29,6 +17,13 @@
     },
 
     "articles": [
+      {
+        "img": "/images/landingpage/scalable.svg",
+        "date": "October 31, 2025",
+        "title": "MyCase, Buliding a High Level Design System",
+        "description": "MyCase's high-level design system established a unified visual language, consistent UX, and scalable framework supporting designers and developers beyond one-off designs.MyCase's high-level design system established a unified visual language, consistent UX, and scalable framework supporting designers and developers beyond one-off designs.",
+        "link": "/blogs/mycase-building-a-high-level-design-system"
+      },
       {
         "img": "/images/articles/business-growth.jpg",
         "date": "November 13, 2025",
