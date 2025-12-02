@@ -112,7 +112,7 @@ const Footer = () => {
                 {[
                   {
                     img: "/images/footer/linkedin.svg",
-                    href: "/",
+                    href: "https://www.linkedin.com/company/nexuxlabspvtltd/",
                     name: "linkedin",
                   },
 
